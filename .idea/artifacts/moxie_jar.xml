@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="moxie:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/moxie_jar</output-path>
+    <root id="archive" name="moxie_jar.jar">
+      <element id="module-output" name="moxie" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.44/fastjson-1.2.44.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.44" />
+    </root>
+  </artifact>
+</component>

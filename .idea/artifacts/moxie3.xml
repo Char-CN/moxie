@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="moxie3">
+    <output-path>$PROJECT_DIR$/out/artifacts/moxie3</output-path>
+    <root id="root">
+      <element id="library" level="project" name="scala-sdk-2.12.4" />
+      <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.44" />
+      <element id="archive" name="moxie3.jar">
+        <element id="module-output" name="moxie" />
+      </element>
+    </root>
+  </artifact>
+</component>
