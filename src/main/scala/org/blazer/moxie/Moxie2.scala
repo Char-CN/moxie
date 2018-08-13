@@ -1,6 +1,7 @@
 package org.blazer.moxie
 
 import java.io._
+import java.nio.charset.StandardCharsets
 
 import scala.io.Source
 import scala.util.control.Breaks._
@@ -13,11 +14,9 @@ object Moxie2 {
     var json_dir_path = "/Users/hyy/test.json"
     var output_path = "/Users/hyy/test/"
 
-    json_dir_path = "/Users/hyy/zhongan/moxie/data/20180511/"
+    json_dir_path = "/Users/hyy/zhongan/moxie/test/data/"
     output_path = "/Users/hyy/zhongan/moxie/test"
 
-    println(args)
-    println(args.length)
     if (args.length < 2) {
       println(s"args error : Usage : java -jar xxx.jar {json_dir_path} {output_path}")
       System.exit(-1)
@@ -25,18 +24,17 @@ object Moxie2 {
     json_dir_path = args(0)
     output_path = args(1)
 
-
     output_path = output_path + File.separator
 
     // append 追加文件
-    val file_moxie_base_info = new FileWriter(output_path + "moxie_base_info.csv", true)
-    val file_moxie_packages_info = new FileWriter(output_path + "moxie_packages_info.csv", true)
-    val file_moxie_families_info = new FileWriter(output_path + "moxie_families_info.csv", true)
-    val file_moxie_recharges_info = new FileWriter(output_path + "moxie_recharges_info.csv", true)
-    val file_moxie_bills_info = new FileWriter(output_path + "moxie_bills_info.csv", true)
-    val file_moxie_calls_info = new FileWriter(output_path + "moxie_calls_info.csv", true)
-    val file_moxie_smses_info = new FileWriter(output_path + "moxie_smses_info.csv", true)
-    val file_moxie_nets_info = new FileWriter(output_path + "moxie_nets_info.csv", true)
+    val file_moxie_base_info = getBufferedWriter(output_path + "moxie_base_info.csv")
+    val file_moxie_packages_info = getBufferedWriter(output_path + "moxie_packages_info.csv")
+    val file_moxie_families_info = getBufferedWriter(output_path + "moxie_families_info.csv")
+    val file_moxie_recharges_info = getBufferedWriter(output_path + "moxie_recharges_info.csv")
+    val file_moxie_bills_info = getBufferedWriter(output_path + "moxie_bills_info.csv")
+    val file_moxie_calls_info = getBufferedWriter(output_path + "moxie_calls_info.csv")
+    val file_moxie_smses_info = getBufferedWriter(output_path + "moxie_smses_info.csv")
+    val file_moxie_nets_info = getBufferedWriter(output_path + "moxie_nets_info.csv")
     val field_delimiter = "\t"
     var success_count = 0
 
@@ -320,8 +318,12 @@ object Moxie2 {
     0
   }
 
-  def output(fileWriter: FileWriter, str: String): Unit = {
-    fileWriter.write(str + "\n")
+  def getBufferedWriter(path: String, append: Boolean = false): BufferedWriter = {
+    new BufferedWriter(
+      new OutputStreamWriter(new FileOutputStream(path, append), StandardCharsets.UTF_8))
   }
 
+  def output(bufferedWriter: BufferedWriter, str: String): Unit = {
+    bufferedWriter.write(str + "\n")
+  }
 }

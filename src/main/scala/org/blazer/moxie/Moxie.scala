@@ -40,7 +40,7 @@ object Moxie {
         val json = JSON.parseObject(jsonStr)
 
         if (json == null) {
-            println(s"parse json is null. [${json_path}]")
+            println(s"parse json is null. [$json_path]")
             return
         }
 
@@ -255,7 +255,7 @@ object Moxie {
             }
         }
 
-        println(s"parse [${json_path}] successful.")
+        println(s"parse [$json_path] successful.")
     }
 
     def output(fileWriter: FileWriter, str: String): Unit = {
