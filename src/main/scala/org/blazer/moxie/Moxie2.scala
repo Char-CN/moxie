@@ -14,8 +14,8 @@ object Moxie2 {
     var json_dir_path = "/Users/hyy/test.json"
     var output_path = "/Users/hyy/test/"
 
-    json_dir_path = "/Users/hyy/zhongan/moxie/test/data/"
-    output_path = "/Users/hyy/zhongan/moxie/test"
+    json_dir_path = "/Users/hyy/za/moxie/test/data/"
+    output_path = "/Users/hyy/za/moxie/test"
 
     if (args.length < 2) {
       println(s"args error : Usage : java -jar xxx.jar {json_dir_path} {output_path}")
